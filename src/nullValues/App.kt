@@ -1,5 +1,5 @@
 package nullValues
-//Элвис оператор 
+//Элвис оператор ?: , безопасный вызов ?
 class Wolf{
     var hunger = 10
     val food = "meat"
