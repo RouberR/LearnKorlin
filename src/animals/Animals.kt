@@ -1,23 +1,20 @@
 package animals
-//Наследование и полиморфизм 
-open class Animals{
-    open val image = ""
-    open val food = ""
-    open val habitat = ""
+//Наследование, полиморфизм, абстракция и интерфейсы
+abstract class Animals : Roamable{
+    abstract val image : String
+    abstract val food : String
+    abstract val habitat : String
      var hunger = 10
 
 
-   open fun makeNoize(){
-        println("Животное издает звук:")
-    }
+   abstract fun makeNoize()
 
-    open fun eat(){
-        println("Животное есть")
-    }
+    abstract fun eat()
 
-   open fun roam(){
+   override fun roam(){
         println("Животное передвигается")
     }
+
     fun sleep(){
         println("Животное спит")
     }
@@ -37,4 +34,13 @@ fun main() {
     val hippo = Hippo()
     vet.giveShot(wolf)
     vet.giveShot(hippo)
+
+
+    val roamable = arrayOf(Hippo(), Wolf(), Vehicle())
+    for (item in roamable){
+        item.roam()
+        if (item is Animals){
+            item.eat()
+        }
+    }
 }
