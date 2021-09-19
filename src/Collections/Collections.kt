@@ -1,5 +1,5 @@
 package Collections
-//Коллекции List, set, mutableList, mutableSet
+//Коллекции List, set, mutableList, mutableSet, map, mutableMap
 
 data class Recipe(var name: String)
 
